@@ -1,5 +1,22 @@
-<p>Cursos Components</p>
+<p>Lista de Cursos do Portal {{ nomePortal }}</p> 
+
+<!-- Na linha 1 interpolamos nomePortal que vem do construtor JS no components.ts para passarmos a url do portal a essa variável -->
 
 <app-curso-detalhe></app-curso-detalhe> 
 
 <!-- Aqui, como o curso detalhe está dentro de cursos, não precisamos exportar ele em app module, visto que o cursos já está exportado lá, ele faz esse processo para nós. -->
+
+<!-- Abaixo iremos criar uma lista de cursos de forma dinâmica, utilizando o template Angular -->
+
+<!-- Vamos falar um pouco também sobre as diretivas la no cursos.components.ts-->
+
+<!-- A diretiva que iremos utilizar aqui, é ngFor e estará dentro do nosso exemplo. Ela irá interagir com o nosso array de cursos la no components.ts -->
+
+<ul>
+    <li *ngFor="let curso of cursos">
+        {{curso}}
+    </li>
+</ul>
+
+<!-- Dentro de li, nós utilizamos a diretiva ngFor, criamos e declaramos a variável curso que fez a interação através do of com o array cursos do component.ts -->
+<!-- Por fim interpolamos a variável curso dentro do li -->
