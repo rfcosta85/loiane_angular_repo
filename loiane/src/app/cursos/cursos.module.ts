@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CursosComponent } from './cursos/cursos.component';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
+import { CursosService } from './cursos.service'
 
 
 
@@ -13,7 +14,10 @@ import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
   ],
   exports: [
     CursosComponent
-  ] //Aqui precisamos declarar o exports para que os nossos elementos do cursos fique visível no appModule. Ou seja, tudo que queremos expor para outros módulos, precisa ser feito aqui dentro.
+  ], //Aqui precisamos declarar o exports para que os nossos elementos do cursos fique visível no appModule. Ou seja, tudo que queremos expor para outros módulos, precisa ser feito aqui dentro.
+
+  providers: [ CursosService ] //Aqui colocamos o nosso serviços fornecedores(vem de providers em inglês)
+
 })
 export class CursosModule { }
 
